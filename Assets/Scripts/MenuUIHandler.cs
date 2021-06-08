@@ -27,4 +27,9 @@ public class MenuUIHandler : MonoBehaviour
         Application.Quit(); // original code to quit Unity player
 #endif    
     }
+
+    public void ScoresScreen()
+    {
+        SceneManager.LoadScene(2);
+    }
 }

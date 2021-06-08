@@ -17,6 +17,13 @@ public class GameManager : MonoBehaviour
 
     public int scorePoint = 0;
 
+    /*public Text score1;
+    public Text score2;
+    public Text score3;
+    public int scorePoint1 = 0;
+    public int scorePoint2 = 0;
+    public int scorePoint3 = 0;*/
+
 
     private void Awake()
     {
@@ -36,12 +43,21 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         BestScoreSetter();
+        //TopScoresSetter();
+
     }
 
     public void BestScoreSetter()
     {
         bestScoreText.text = "Best Score : " + nameText + " : " + scorePoint;
     }
+
+    /*public void TopScoresSetter()
+    { 
+        score1.text = "1st Score : " + scorePoint;
+        score2.text = "1st Score : " + scorePoint2;
+        score2.text = "1st Score : " + scorePoint3;
+    }*/
 
     public void UserNameSetter()
     {
@@ -53,6 +69,9 @@ public class GameManager : MonoBehaviour
     {
         public string nameText;
         public int scorePoint;
+
+        //public int scorePoint2;
+        //public int scorePoint3;
     }
 
     public void SaveUserDatas()
@@ -60,6 +79,9 @@ public class GameManager : MonoBehaviour
         SaveData datas = new SaveData();
         datas.nameText = nameText;
         datas.scorePoint = scorePoint;
+
+        //datas.scorePoint2 = scorePoint2;
+        //datas.scorePoint3= scorePoint3;
 
         string json = JsonUtility.ToJson(datas);
 
@@ -78,6 +100,9 @@ public class GameManager : MonoBehaviour
 
             nameText = datas.nameText;
             scorePoint = datas.scorePoint;
+
+            //scorePoint2= datas.scorePoint2;
+            //scorePoint3 = datas.scorePoint3;
 
             Debug.Log("Best Score Datas Restored!");
         }

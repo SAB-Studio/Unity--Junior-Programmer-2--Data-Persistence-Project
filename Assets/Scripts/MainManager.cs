@@ -23,6 +23,9 @@ public class MainManager : MonoBehaviour
 
     private int bestScore;
 
+    //private int score2;
+    //private int score3;
+
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +70,10 @@ public class MainManager : MonoBehaviour
         }
 
         bestScore = GameManager.Instance.scorePoint;
+
+        //score2 = GameManager.Instance.scorePoint2;
+        //score3 = GameManager.Instance.scorePoint3;
+
     }
 
     void AddPoint(int point)
@@ -85,5 +92,10 @@ public class MainManager : MonoBehaviour
             GameManager.Instance.scorePoint = m_Points;
             GameManager.Instance.SaveUserDatas();
         }
+        /*else if (m_Points < bestScore)
+        {
+            GameManager.Instance.scorePoint2 = m_Points;
+            GameManager.Instance.SaveUserDatas();
+        }*/
     }
 }
